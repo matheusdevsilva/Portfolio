@@ -5,302 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Matheus | Desenvolvedor Full Stack</title>
+    <meta name="description"
+        content="Portfólio de Matheus, desenvolvedor Full Stack especializado em React, Node.js, automações e infraestrutura NOC.">
+    <link rel="stylesheet" href="styles.css">
 
-    <style>
-        * {
-            box-sizing: border-box
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            background: #0f172a;
-            color: #e2e8f0;
-            scroll-behavior: smooth
-        }
-
-        nav {
-            position: sticky;
-            top: 0;
-            background: #020617;
-            border-bottom: 1px solid #1e293b;
-            padding: 15px 30px;
-            z-index: 100
-        }
-
-        .nav-container {
-            max-width: 1100px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center
-        }
-
-        .nav-links a {
-            color: #e2e8f0;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px
-        }
-
-        .nav-links a:hover {
-            color: #38bdf8
-        }
-
-        header {
-            padding: 90px 20px;
-            background: #020617
-        }
-
-        .hero {
-            max-width: 1100px;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            flex-wrap: wrap;
-            justify-content: center
-        }
-
-        .profile-pic {
-            width: 190px;
-            height: 190px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #38bdf8;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.5)
-        }
-
-        .hero-text {
-            max-width: 520px
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 42px
-        }
-
-        h2 {
-            color: #38bdf8;
-            margin-bottom: 20px
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 70px 20px
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px
-        }
-
-        .card {
-            background: #020617;
-            border-radius: 12px;
-            border: 1px solid #1e293b;
-            overflow: hidden;
-            transition: 0.35s
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45)
-        }
-
-        .project-img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover
-        }
-
-        .card-content {
-            padding: 20px
-        }
-
-        .card h3 {
-            margin-top: 0
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 16px;
-            border-radius: 6px;
-            background: #38bdf8;
-            color: #020617;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.25s
-        }
-
-        .btn:hover {
-            background: #0ea5e9
-        }
-
-        .skills {
-            margin-top: 20px
-        }
-
-        .skill {
-            margin-bottom: 18px
-        }
-
-        .skill-name {
-            font-size: 14px;
-            margin-bottom: 5px
-        }
-
-        .skill-bar {
-            height: 8px;
-            background: #1e293b;
-            border-radius: 10px;
-            overflow: hidden
-        }
-
-        .skill-fill {
-            height: 100%;
-            background: #38bdf8;
-            width: 0;
-            transition: 1.2s
-        }
-
-        .about {
-            font-size: 18px;
-            line-height: 1.6;
-            max-width: 720px
-        }
-
-        .exp-card {
-            background: #020617;
-            border: 1px solid #1e293b;
-            padding: 25px;
-            border-radius: 10px
-        }
-
-        .contact-buttons a {
-            margin-right: 10px
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            background: #020617;
-            margin-top: 40px;
-            border-top: 1px solid #1e293b
-        }
-
-        .fade {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: 0.8s
-        }
-
-        .fade.show {
-            opacity: 1;
-            transform: translateY(0)
-        }
-
-
-        .tech-icon {
-            transition: 0.3s
-        }
-
-        .tech-icon:hover {
-            transform: scale(1.2) rotate(3deg)
-        }
-
-        .theme-toggle {
-            cursor: pointer;
-            background: #38bdf8;
-            border: none;
-            padding: 6px 10px;
-            border-radius: 6px;
-            font-weight: bold
-        }
-
-        body.light {
-            background: #f1f5f9;
-            color: #0f172a
-        }
-
-        body.light nav,
-        body.light header,
-        body.light footer,
-        body.light .card,
-        body.light .exp-card {
-            background: #ffffff;
-            color: #0f172a
-        }
-
-        body.light .btn {
-            color: #fff
-        }
-
-        .github-stats img {
-            max-width: 100%;
-            margin-top: 10px;
-            border-radius: 10px
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 26px;
-            cursor: pointer;
-        }
-
-        /* RESPONSIVO */
-
-        @media(max-width:768px) {
-
-            .nav-links {
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: #020617;
-                flex-direction: column;
-                align-items: center;
-                display: none;
-                padding: 20px 0;
-            }
-
-            .nav-links a {
-                margin: 12px 0;
-                font-size: 16px;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .profile-pic {
-                width: 150px;
-                height: 150px;
-            }
-
-            h1 {
-                font-size: 32px;
-            }
-
-            .container {
-                padding: 50px 20px;
-            }
-
-        }
-    </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
@@ -314,12 +24,23 @@
                 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
             </div>
 
+
             <div class="nav-links" id="menu">
                 <a href="#sobre">Sobre</a>
                 <a href="#skills">Tecnologias</a>
                 <a href="#projetos">Projetos</a>
                 <a href="#experiencia">Experiência</a>
                 <a href="#contato">Contato</a>
+
+            </div>
+            <div class="social">
+                <a href="https://wa.me/5511945373445" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <a href="https://www.instagram.com/matmarques223" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
             </div>
 
         </div>
@@ -399,6 +120,11 @@
                 <h3>CSS3</h3>
                 <p>Estilização moderna e layouts responsivos.</p>
             </div>
+            <div class="card" style="text-align:center;padding:30px">
+                <i class="devicon-cplusplus-plain tech-icon" style="font-size:50px"></i>
+                <h3>C++</h3>
+                <p>Programação de sistemas, lógica de baixo nível e algoritmos.</p>
+            </div>
 
             <div class="card" style="text-align:center;padding:30px">
                 <i class="devicon-mysql-plain tech-icon" style="font-size:50px"></i>
@@ -410,6 +136,11 @@
                 <i class="devicon-postgresql-plain tech-icon" style="font-size:50px"></i>
                 <h3>PostgreSQL</h3>
                 <p>Banco de dados relacional utilizado em aplicações backend.</p>
+            </div>
+            <div class="card" style="text-align:center;padding:30px">
+                <i class="devicon-mariadb-original tech-icon" style="font-size:50px"></i>
+                <h3>MariaDB</h3>
+                <p>Banco de dados relacional baseado em MySQL, utilizado em aplicações web escaláveis e APIs.</p>
             </div>
 
             <div class="card" style="text-align:center;padding:30px">
@@ -435,30 +166,42 @@
         <div class="grid">
 
             <div class="card">
-                <img class="project-img" src="imgs/projeto1.jpeg" alt="NOC Dashboard">
+                <img class="project-img" src="imgs/projeto1.jpeg" loading="lazy" alt="NOC Dashboard">
                 <div class="card-content">
                     <h3>NOC Dashboard</h3>
-                    <p>Painel de monitoramento de rede com status de equipamentos e alertas.</p>
-                    <a class="btn" href="https://github.com/matheusdevsilva/Dashboard-Acessanet" target="_blank">GitHub</a>
+                    <p>
+                        Dashboard de monitoramento de rede desenvolvido para ambientes NOC,
+                        permitindo visualização em tempo real do status de equipamentos,
+                        alertas e indicadores operacionais.
+                    </p>
+                    <a class="btn" href="https://github.com/matheusdevsilva/Dashboard-Acessanet"
+                        target="_blank">GitHub</a>
 
                 </div>
             </div>
             <div class="card">
-                <img class="project-img" src="imgs/projeto2.jpeg" alt="NOC Dashboard">
+                <img class="project-img" src="imgs/projeto2.jpeg" loading="lazy" alt="NOC Dashboard">
                 <div class="card-content">
                     <h3>Intranet Acessanet</h3>
-                    <p>Intranet corporativa desenvolvida para centralizar sistemas, ferramentas e informações internas
-                        da empresa Acessanet.</p>
-                    <a class="btn" href="https://github.com/matheusdevsilva/intranet-acessanet" target="_blank">GitHub</a>
+                    <p>
+                        Plataforma interna desenvolvida para centralizar sistemas,
+                        ferramentas e informações corporativas da empresa Acessanet,
+                        facilitando o acesso e a produtividade da equipe.
+                    </p>
+                    <a class="btn" href="https://github.com/matheusdevsilva/intranet-acessanet"
+                        target="_blank">GitHub</a>
 
                 </div>
             </div>
             <div class="card">
-                <img class="project-img" src="imgs/projeto3.jpeg" alt="NOC Dashboard">
+                <img class="project-img" src="imgs/projeto3.jpeg" loading="lazy" alt="NOC Dashboard">
                 <div class="card-content">
                     <h3>Área do cliente - Projecta</h3>
-                    <p>Área do cliente desenvolvida para a empresa Projecta, permitindo acesso a informações, serviços e
-                        recursos através de uma plataforma web segura.</p>
+                    <p>
+                        Área do cliente desenvolvida para a empresa Projecta,
+                        oferecendo acesso seguro a informações, serviços e recursos
+                        através de uma interface web moderna e intuitiva.
+                    </p>
                     <a class="btn" href="https://github.com/matheusdevsilva/Area-do-Cliente-da-Projecta"
                         target="_blank">GitHub</a>
 
@@ -467,26 +210,34 @@
 
 
             <div class="card">
-                <img class="project-img" src="imgs/projeto4.jpeg" alt="Hotspot Portal">
+                <img class="project-img" src="imgs/projeto4.jpeg" loading="lazy" alt="Hotspot Portal">
                 <div class="card-content">
                     <h3>Hotspot Portal</h3>
-                    <p>Portal de autenticação Wi‑Fi com página de login personalizada.</p>
+                    <p>
+                        Portal de autenticação Wi-Fi com página de login personalizada,
+                        desenvolvido para melhorar a experiência de acesso e identidade visual da rede.
+                    </p>
                     <a class="btn" href="https://github.com/matheusdevsilva/hotspot-portal" target="_blank">Github</a>
                     <a class="btn" href="https://hotspot-portal-steel.vercel.app/" target="_blank">Ver Projeto</a>
                 </div>
             </div>
 
             <div class="card">
-                <img class="project-img" src="imgs/projeto5.jpeg" alt="NOC Dashboard">
+                <img class="project-img" src="imgs/projeto5.jpeg" loading="lazy" alt="NOC Dashboard">
                 <div class="card-content">
                     <h3>Site Sibcare</h3>
-                    <p>Site da empresa de estetica para mostrar a empresa e os procedimentos.</p>
-                    <a class="btn" href="https://github.com/matheusdevsilva/front-end-sibcare" target="_blank">Github</a>
+                    <p>
+                        Site institucional desenvolvido para a clínica Sibcare,
+                        com foco na apresentação da empresa, serviços estéticos
+                        e fortalecimento da presença digital da marca.
+                    </p>
+                    <a class="btn" href="https://github.com/matheusdevsilva/front-end-sibcare"
+                        target="_blank">Github</a>
                     <a class="btn" href="https://sibcare.vercel.app" target="_blank">Ver Projeto</a>
                 </div>
             </div>
             <div class="card">
-                <img class="project-img" src="imgs/projeto6.jpeg" alt="Hotspot Portal">
+                <img class="project-img" src="imgs/projeto6.jpeg" loading="lazy" alt="Hotspot Portal">
                 <div class="card-content">
                     <h3>Site Acessanet</h3>
                     <p>Site da provedora Acessanet Telecom LTDA</p>
@@ -495,17 +246,32 @@
                 </div>
             </div>
             <div class="card">
-                <img class="project-img" src="imgs/projeto7.jpeg" alt="Hotspot Portal">
+                <img class="project-img" src="imgs/projeto7.jpeg" loading="lazy" alt="Hotspot Portal">
                 <div class="card-content">
                     <h3>Site Tico Carretos</h3>
-                    <p>Site da provedora Acessanet Telecom LTDA</p>
+                    <p>
+                        Site institucional desenvolvido para a empresa Tico Carretos,
+                        com foco em divulgação de serviços, contato rápido e presença digital.
+                    </p>
                     <a class="btn" href="https://github.com/matheusdevsilva/Tico-Carretos" target="_blank">Github</a>
                     <a class="btn" href="https://tico-carretos-815w.vercel.app" target="_blank">Ver Projeto</a>
                 </div>
             </div>
-
+            <div class="card">
+                <img class="project-img" src="imgs/projeto8.jpeg" loading="lazy" alt="Hotspot Portal">
+                <div class="card-content">
+                    <h3>Site Dondoka Boutique Tobias</h3>
+                    <p style="text-indent: 0%;">Site desenvolvido para a loja de roupas Dondoka Boutique Tobias,
+                        localizada em Franco da Rocha, com foco em apresentação moderna,
+                        catálogo de produtos e divulgação da marca.</p>
+                    <a class="btn" href="https://github.com/matheusdevsilva/Dondoka-Boutique.tobias"
+                        target="_blank">Github</a>
+                    <a class="btn" href="https://dondoka-boutique-tobias.vercel.app/" target="_blank">Ver Projeto</a>
+                </div>
+            </div>
         </div>
     </section>
+
 
     <section id="experiencia" class="container fade">
         <h2>Experiência Técnica</h2>
@@ -520,6 +286,7 @@
         </div>
 
     </section>
+
 
 
 
@@ -541,8 +308,13 @@
     </footer>
 
     <script>
-
+        const text = "Matheus Marques";
+        let i = 0;
         const faders = document.querySelectorAll('.fade');
+        const btn = document.querySelector('.theme-toggle');
+        const skills = document.querySelectorAll('.skill-fill');
+        const sections = document.querySelectorAll("section");
+        const links = document.querySelectorAll(".nav-links a");
 
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -551,15 +323,59 @@
                 }
             });
         });
+        function type() {
+            if (i < text.length) {
+                document.querySelector("h1").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, 150);
+            }
+        }
+        window.addEventListener("scroll", () => {
+            let current = "";
 
+            sections.forEach(section => {
+                const top = window.scrollY;
+                const offset = section.offsetTop - 150;
+                const height = section.offsetHeight;
+
+                if (top >= offset && top < offset + height) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            links.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
+            });
+        });
+        window.onload = () => {
+            document.querySelector("h1").innerHTML = "";
+            type();
+        };
+        function toggleTheme() {
+            document.body.classList.toggle('light');
+
+            localStorage.setItem(
+                'theme',
+                document.body.classList.contains('light') ? 'light' : 'dark'
+            );
+        }
+        window.addEventListener('load', () => {
+            const theme = localStorage.getItem('theme');
+
+            if (theme === 'light') {
+                document.body.classList.add('light');
+            }
+        });
         function toggleMenu() {
-            const menu = document.getElementById("menu");
-            menu.classList.toggle("active");
+            document.getElementById("menu").classList.toggle("show-menu");
         }
 
         faders.forEach(el => observer.observe(el));
 
-        function toggleTheme() { document.body.classList.toggle('light') }
+
 
     </script>
 
@@ -567,5 +383,3 @@
 
 
 </html>
-
-
